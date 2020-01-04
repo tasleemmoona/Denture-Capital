@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Denture Capital</title>
+		<style>
+			body {
+				text-align: center;
+			}
+
+			.star {
+				font-size: 32px;
+			}
+
+			#btns {
+				width: 300px;
+				height: 150px;
+				position: relative;
+				color: #2C2A2A;
+			}
+
+			#btns a {
+				font-size: 16px;
+				padding: 10px;
+				background: none;
+				border: 1px solid black;
+			}
+
+			#b1 {
+				width: 80px;
+				position: absolute;
+				left: 540px;
+			}
+
+			#b2 {
+				width: 130px;
+				position: absolute;
+				left: 650px;
+			}
+
+			#b3 {
+				width: 120px;
+				position: absolute;
+				top: 50px;
+				left: 540px;
+			}
+
+			#b4 {
+				position: absolute;
+				top: 50px;
+				left: 700px;
+			}
+
+			#b5 {
+				position: absolute;
+				top: 100px;
+				left: 595px;
+			}
+
+			#b6 {
+				position: absolute;
+				top: 100px;
+				left: 680px;
+			}
+
+			#btns a:hover {
+				background-color: #3A3939;
+				color: white;
+			}
+
+			#sub {
+				font-size: 18px;
+				padding: 10px;
+				background-color: #1498AB;
+				color: black;
+				border: 1px solid black;
+
+			}
+
+			input[type="submit"]:disabled {
+				cursor: not-allowed;
+			}
+
+			#sub:hover:not([disabled]) {
+				background-color: #0F6571;
+				color: white;
+			}
+		</style>
+		<script type="text/javascript">
+			function s1(){
+				document.getElementById('feed').innerHTML ='Poor';
+				document.getElementById('s1').innerHTML = '&#9733;';
+				document.getElementById('s2').innerHTML = '&#9734;';
+				document.getElementById('s3').innerHTML = '&#9734;';
+				document.getElementById('s4').innerHTML = '&#9734;';
+				document.getElementById('s5').innerHTML = '&#9734;';
+				var x = document.getElementById('btns');
+			 	var y = x.getElementsByTagName("a");
+				for (i = 0; i < y.length; i++) {
+			  		y[i].removeAttribute("style");
+				}
+				document.getElementById('options').style.display = 'block';
+				document.getElementById('sub').disabled = true;
+				document.getElementById('demo').innerHTML = "1";
+			}
+
+			function s2(){
+				document.getElementById('feed').innerHTML ='Bad';
+				document.getElementById('s1').innerHTML = '&#9733;';
+				document.getElementById('s2').innerHTML = '&#9733;';
+				document.getElementById('s3').innerHTML = '&#9734;';
+				document.getElementById('s4').innerHTML = '&#9734;';
+				document.getElementById('s5').innerHTML = '&#9734;';
+				var x = document.getElementById('btns');
+			 	var y = x.getElementsByTagName("a");
+				for (i = 0; i < y.length; i++) {
+			  		y[i].removeAttribute("style");
+				}
+				document.getElementById('options').style.display = 'block';
+				document.getElementById('sub').disabled = true;
+				document.getElementById('demo').innerHTML = "2";
+			}
+
+			function s3(){
+				document.getElementById('feed').innerHTML ='Average';
+				document.getElementById('s1').innerHTML = '&#9733;';
+				document.getElementById('s2').innerHTML = '&#9733;';
+				document.getElementById('s3').innerHTML = '&#9733;';
+				document.getElementById('s4').innerHTML = '&#9734;';
+				document.getElementById('s5').innerHTML = '&#9734;';
+				var x = document.getElementById('btns');
+			 	var y = x.getElementsByTagName("a");
+				for (i = 0; i < y.length; i++) {
+			  		y[i].removeAttribute("style");
+				}
+				document.getElementById('options').style.display = 'block';
+				document.getElementById('sub').disabled = true;
+				document.getElementById('demo').innerHTML = "3";
+			}
+
+			function s4(){
+				document.getElementById('feed').innerHTML ='Good';
+				document.getElementById('s1').innerHTML = '&#9733;';
+				document.getElementById('s2').innerHTML = '&#9733;';
+				document.getElementById('s3').innerHTML = '&#9733;';
+				document.getElementById('s4').innerHTML = '&#9733;';
+				document.getElementById('s5').innerHTML = '&#9734;';
+			 	var x = document.getElementById('btns');
+			 	var y = x.getElementsByTagName("a");
+				for (i = 0; i < y.length; i++) {
+			  		y[i].removeAttribute("style");
+				}
+			 	document.getElementById('options').style.display = 'block';
+				document.getElementById('sub').disabled = true;
+				document.getElementById('demo').innerHTML = "4";
+			}
+
+			function s5(){
+				document.getElementById('feed').innerHTML ='Excellent';
+				document.getElementById('s1').innerHTML = '&#9733;';
+				document.getElementById('s2').innerHTML = '&#9733;';
+				document.getElementById('s3').innerHTML = '&#9733;';
+				document.getElementById('s4').innerHTML = '&#9733;';
+				document.getElementById('s5').innerHTML = '&#9733;';
+				var x = document.getElementById('btns');
+			 	var y = x.getElementsByTagName("a");
+				for (i = 0; i < y.length; i++) {
+			  		y[i].removeAttribute("style");
+				}
+				document.getElementById('options').style.display = 'none';
+				document.getElementById('sub').disabled = false;
+				document.getElementById('demo').innerHTML = "5";
+			}
+
+			function clr(ob){
+				document.getElementById(ob.id).style.color = 'white';
+				document.getElementById(ob.id).style.backgroundColor = 'black';
+				document.getElementById('sub').disabled = false;
+				var str = document.getElementById("demo").innerHTML;
+				var i = str.search(ob.innerHTML);
+				if(i<0){
+					var para = document.getElementById('demo');
+					var str = '';
+					str = ":" + ob.innerHTML;
+					var node = document.createTextNode(str);
+					para.appendChild(node);
+				}
+			}
+
+			function remove(ob){
+				ob.removeAttribute("style");
+				var str = document.getElementById("demo").innerHTML;
+				var i = str.indexOf(ob.innerHTML);
+				if(i>=0){
+					var s1 = str.slice(0,i-1);
+					var s2 = str.slice(i, );
+					var res = s1 + '' + s2;
+					var str = res.replace(ob.innerHTML, "");
+				}
+				document.getElementById("demo").innerHTML = str;
+			}
+
+			function add(){
+				var str = document.getElementById('feed').innerHTML;
+				str = str + ":" + document.getElementById('demo').innerHTML;
+				document.getElementById('out').value = str;
+			}
+		</script>
+	</head>
+	<body>
+	<form method="post" action="/submit" enctype="application/x-www-form-json">
+		<br><br><br><br><br>
+		<h1>Please give your feedback</h1>
+		<h2 id="feed"></h2>
+		<div class="star">
+			<span id="s1" onclick="s1()">&#9734;</span>
+			<span id="s2" onclick="s2()">&#9734;</span>
+			<span id="s3" onclick="s3()">&#9734;</span>
+			<span id="s4" onclick="s4()">&#9734;</span>
+			<span id="s5" onclick="s5()">&#9734;</span>
+		</div>	
+		<div id="options" style='display: none;'>
+			<hr width="300">
+			<br>
+			<h2>What went wrong?</h2>
+			<div id="btns">
+				<a id="b1" onclick="clr(this)"  ondblclick="remove(this)">Poor route</a>
+				<a id="b2" onclick="clr(this)" ondblclick="remove(this)">Too many pickups</a>
+				<a id="b3" onclick="clr(this)" ondblclick="remove(this)">Co-rider behavior</a>
+				<a id="b4" onclick="clr(this)" ondblclick="remove(this)">Navigation</a>
+				<a id="b5" onclick="clr(this)" ondblclick="remove(this)">Driving</a>
+				<a id="b6" onclick="clr(this)" ondblclick="remove(this)">Other</a>
+			</div>
+		</div>
+		<br><br>
+		<p id="demo" style="display: none;"></p>
+		<input type="text" id ="out" name="out" style="display: none;"/>
+		<input type="submit" id="sub" onclick="add()" disabled>
+	</form>
+	</body>
+</html>
